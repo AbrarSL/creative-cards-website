@@ -1,19 +1,38 @@
+@font-face {
+  font-family: Avante Go;
+  src: url(./fonts/avante_go.ttf);
+}
+
+@font-face {
+  font-family: Avante Return;
+  src: url(./fonts/avante_return.ttf);
+}
+
+@font-face {
+  font-family: Edwardian Script;
+  src: url(./fonts/edwardian_script.ttf);
+}
 body {
   display: flex;
   flex-direction: column;
   margin: 0px;
+  font-family: "Arial", sans-serif;
 }
 
 .hero-section, .info-section, .quotes-section, .contact-section, .footer-section {
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 500px;
+  min-height: 500px;
 }
 
 .hero-section, .quotes-section, .footer-section {
   background: #000;
   color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 16px #777;
+  z-index: 1;
 }
 
 .info-section, .contact-section {
@@ -21,9 +40,16 @@ body {
   color: #000;
 }
 
+.hero-section {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
 .footer-section {
-  height: 50px;
+  min-height: 50px;
   padding: 16px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .content {
@@ -31,16 +57,17 @@ body {
   max-width: 1280px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .navbar {
-  align-self: stretch;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  background: #000;
+  padding: 8px;
+  background: #fff;
+  color: #000;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .navbar ul {
@@ -53,21 +80,147 @@ body {
 
 .navbar a {
   text-decoration: none;
+  text-align: center;
+  font-weight: bold;
   color: inherit;
-  padding: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.5s;
 }
 
 .navbar a:hover {
-  background-color: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 16px;
+  font-weight: bold;
+  font-size: 32px;
 }
 
-.logo-image {
-  height: 50px;
+.hero-content, .info-content, .quotes-content, .contact-content {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 64px;
+}
+
+.hero-content {
+  flex-direction: row;
+}
+
+.hero-text, .info-text, .quotes-text, .contact-text {
+  font-size: 48px;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.hero-subtext {
+  font-size: 24px;
+  opacity: 75%;
+}
+
+.hero-image-container {
+  max-width: 300px;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.info-container, .quotes-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 0px 8px #777;
+  transition: all 0.5s;
+  background: #fff;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 8px #000;
+}
+
+.card-text {
+  color: #000;
+  font-weight: bold;
+}
+
+.info {
+  width: 340px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-image {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0px 0px 8px #777;
+}
+
+.card.info.text {
+  width: auto;
+  height: auto;
+  max-width: 340px;
+}
+
+.card-text.review {
+  font-weight: normal;
+}
+
+.card-text.quote {
+  align-self: flex-end;
+}
+
+.contact-content {
+  align-items: stretch;
+  gap: 16px;
+}
+
+.contact-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-text {
+  flex: 1;
+  text-align: center;
+}
+
+.cc-return-text {
+  font-family: "Avante Return";
+}
+
+.cc-go-text {
+  font-family: "Avante Go";
+}
+
+.cc-script-text {
+  font-family: "Edwardian Script";
+  font-weight: bold;
+  font-size: 40px;
 }
