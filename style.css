@@ -4,28 +4,70 @@ body {
   margin: 0px;
 }
 
-.hero-section {
+.hero-section, .info-section, .quotes-section, .contact-section, .footer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   height: 500px;
-  background: #1f2937;
 }
 
-.info-section {
-  height: 500px;
-  background: #fff;
-}
-
-.quotes-section {
-  height: 500px;
+.hero-section, .quotes-section, .footer-section {
   background: #000;
+  color: #fff;
 }
 
-.contact-section {
-  height: 500px;
+.info-section, .contact-section {
   background: #fff;
+  color: #000;
 }
 
 .footer-section {
   height: 50px;
   padding: 16px;
+}
+
+.content {
+  flex: 1;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
   background: #000;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+  padding: 16px;
+}
+
+.navbar a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-image {
+  height: 50px;
 }
